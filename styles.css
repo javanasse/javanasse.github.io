@@ -1,29 +1,50 @@
-body {
-  background-color: white;
+// Non relevant styles
+* {
+  box-sizing: border-box;
 }
-h1 {
-  color: black;
-}
+
 p {
-  color: black;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: #6439a9;
 }
 
+.container {
+  padding: 100px 30px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+// Relevant styles
 .image-stack {
-   display: grid;
-   grid-template-columns: repeat(12, 1fr);
-   position: relative;
-}
-
-.image-stack__item--top {
-   grid-column: 1 / span 8;
-   grid-row: 1; // must be on the same row as the other image
-   padding-top: 20%; // this pushes the image down, and keeps it proportional as it resizes
-   z-index: 1; // make this image render on top of the bottom
+  position: absolute;
+  width: 100%;
 }
 
 .image-stack__item--bottom {
-  grid-column: 4 / -1;
-  grid-row: 1; // make this image be on the same row
+  position: absolute;
+  /* right: 1px; */
+  left: 1px;
+  top: 100px;
+  width: 100px; // this is an arbitrary width, depends on the design
+  z-index: -1;
 }
- 
 
+.image-stack__item--top {
+  padding-top: 20px; // arbitrary value
+  padding-right: 20px; // arbitrary value
+  width: 10%; // arbitrary value
+}
+
+.image-stack__item--contact {
+    position: absolute;
+    left: 300px;
+    top: 150px;
+    width: 10%;
+}
+
+img {
+  /* width: 100%; */
+  display: block;
+}
