@@ -3,14 +3,53 @@
 <head>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="art/logo/j_logo.png">
+  <title>Julian</title>
 </head>
+
+<script language=javascript>
+    var rev = "fwd";
+    function titlebar(val){
+        var msg  = "Julian Armand Vanasse";
+        var res = " ";
+        var speed = 100;
+        var pos = val;
+        msg = "\u265D"+msg+"\u265D"
+        var le = msg.length;
+        if(rev == "fwd"){
+            if(pos < le){
+                pos = pos+1;
+                scroll = msg.substr(0,pos);
+                document.title = scroll;
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+            else {
+                rev = "bwd";
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+        }
+        else {
+            if(pos > 0) {
+                pos = pos-1;
+                var ale = le-pos;
+                scrol = msg.substr(ale,le);
+                document.title = scrol;
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+            else {
+                rev = "fwd";
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+        }
+    }
+    titlebar(0);
+</script>
 
 <img class="title_img" src="art/type-scans/name.png" />
 <img class="bg_img" src="art/mixer-pannel-cleared.png" />
 <img class="plugin-design_img" src="art/type-scans/plugin-design.png" />
 
 <a href="radio/radio.html">
-  <link rel="stylesheet" href="styles.css">
+  <img class="radio_img" src="art/type-scans/radio.png">
 </a>
 <img class="prose_img" src="art/type-scans/prose.png" />
 <img class="mathematics_img" src="art/type-scans/mathematics.png" />
